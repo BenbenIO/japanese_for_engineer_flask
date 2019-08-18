@@ -1,26 +1,37 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>New vocabulary or correction</h1>
-    <p>
-        <strong>Thank you</strong> for willing improving this project ! <br>
-        <br>
-        You can add your own vocabulary into the project via merge request on 
-        <a href="https://github.com/BenbenIO/vocabulary">This GITHUB</a>
-        <br>
-        The format of the vocabulary list is <strong>.xls</strong> and contains three columns:
-        <ul>
-            <li>kanji</li>
-            <li>hiragana</li>
-            <li>english</li>
-        </ul>
-        <strong>THANK YOU again</strong> Here is a cute cat for you
-        <br>
-        <br>
-        <div>
-            <img src="static/cat.jpg" alt="Cute cat for you" style="width:300px;height:400px;">
-        </div>
-    </p>
+    <div style="margin-top: 1.0em">
+        <h2>New vocabulary</h2>
+        <p>
+            <strong>Thank you</strong> for willing improving this project ! <br>
+            <br>
+            You can add your own vocabulary into the project or notify error via a merge request on 
+            <a href="https://github.com/BenbenIO/vocabulary">This GITHUB</a>
+            <br>
+            The format of the vocabulary list is <strong>.xls</strong> and contains three columns:
+            <ul>
+                <li>kanji</li>
+                <li>hiragana</li>
+                <li>english</li>
+            </ul>
+        </p>
+        <p>
+            <h4> Coding contribution</h4>
+            Any comment or possible improvement are more than welcome!
+            Via <a href="https://github.com/BenbenIO/japanese_for_engineer_flask">github</a> or benben.vocabulary@gmail.com
+            <br>
+        </p>
+        <p>
+                <strong>THANK YOU again</strong> Here is a cute cat for you
+                <br>
+                <br>
+                <div>
+                    <img src="static/cat.jpg" alt="Cute cat for you" style="width:300px;height:400px;">
+                </div>
+        </p>
+    </div>
+        
 {% endblock content%}
 
 <script type = "text/javascript" 
