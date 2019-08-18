@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>New vocabulary or correction</h1>
+    <p>
+        <strong>Thank you</strong> for willing improving this project ! <br>
+        <br>
+        You can add your own vocabulary into the project via merge request on 
+        <a href="https://github.com/BenbenIO/vocabulary">This GITHUB</a>
+        <br>
+        The format of the vocabulary list is <strong>.xls</strong> and contains three columns:
+        <ul>
+            <li>kanji</li>
+            <li>hiragana</li>
+            <li>english</li>
+        </ul>
+        <strong>THANK YOU again</strong> Here is a cute cat for you
+        <br>
+        <br>
+        <div>
+            <img src="static/cat.jpg" alt="Cute cat for you" style="width:300px;height:400px;">
+        </div>
+    </p>
+{% endblock content%}
+
+<script type = "text/javascript" 
+    src = "{{ url_for('static', filename = 'main.js') }}" >
+</script>
