@@ -22,12 +22,25 @@ def load_vocabulary(wanted_vocabulary='Machine_Learning'):
     vocabulary.style.set_properties(**{'text-align': 'center'})
     vocabulary.style.set_table_styles([dict(selector='td', props=[('text-align', 'center')]),])
 
+def render_name(name):
+    """
+        Render the name by deleting the _ between the name
+        Args:
+        - name string to render
+    """
+    title = ""
+    words = name.split("_")
+    for w in words:
+        title = title + w + " "
+    
+    return(title.strip())
+
 @app.route('/')
 def display_df_home():
     # Load the default dataframe in full answer mode
     global vocabulary, name
     load_vocabulary()
-    return render_template('home.html', name = name, dataframe=vocabulary)
+    return render_template('home.html', name = render_name(name), dataframe=vocabulary)
 
 ## Vocabulary set callback
 @app.route('/select_Science')
@@ -35,28 +48,28 @@ def select_Science():
     # Selec the Science dataframe
     global vocabulary, name
     load_vocabulary("Science")
-    return render_template('home.html', name = name, dataframe=vocabulary)
+    return render_template('home.html', name = render_name(name), dataframe=vocabulary)
 
 @app.route('/select_Embedded')
 def select_Embedded():
     # Selec the System_embedded dataframe
     global vocabulary, name
     load_vocabulary("Embedded_Systems")
-    return render_template('home.html', name = name, dataframe=vocabulary)
+    return render_template('home.html', name = render_name(name), dataframe=vocabulary)
 
 @app.route('/select_ML')
 def select_ML():
     # Selec the Machine Learning dataframe
     global vocabulary, name
     load_vocabulary("Machine_Learning")
-    return render_template('home.html', name = name, dataframe=vocabulary)
+    return render_template('home.html', name = render_name(name), dataframe=vocabulary)
 
 @app.route('/select_General')
 def select_General():
     # Selec the General dataframe
     global vocabulary, name
     load_vocabulary("General")
-    return render_template('home.html', name = name, dataframe=vocabulary)
+    return render_template('home.html', name = render_name(name), dataframe=vocabulary)
 
 ## Test mode callback
 @app.route('/load_answer')
@@ -64,7 +77,7 @@ def load_answer():
     # Load the full dataframe
     global vocabulary, name
     modetitle = " (answer)"
-    return render_template('home.html', name = name + modetitle, dataframe=vocabulary)
+    return render_template('home.html', name = render_name(name) + modetitle, dataframe=vocabulary)
 
 @app.route('/load_kanji')
 def load_kanji():
@@ -73,7 +86,7 @@ def load_kanji():
     findkanji = vocabulary.copy()
     findkanji.kanji = " "
     modetitle = " (kanji test)"
-    return render_template('home.html', name = name + modetitle, dataframe=findkanji)
+    return render_template('home.html', name = render_name(name) + modetitle, dataframe=findkanji)
 
 @app.route('/load_hiragana')
 def load_hiragana():
@@ -81,8 +94,8 @@ def load_hiragana():
     global vocabulary, name
     findhiragana = vocabulary.copy()
     findhiragana.hiragana = " "
-    modetitle = " (hiragana test)"
-    return render_template('home.html', name = name + modetitle, dataframe=findhiragana)
+    modetitle = " (reading test)"
+    return render_template('home.html', name = render_name(name) + modetitle, dataframe=findhiragana)
 
 @app.route('/load_english')
 def load_english():
@@ -91,7 +104,7 @@ def load_english():
     findenglish = vocabulary.copy()
     findenglish.english = " "
     modetitle = " (english test)"
-    return render_template('home.html', name = name + modetitle, dataframe=findenglish)
+    return render_template('home.html', name = render_name(name) + modetitle, dataframe=findenglish)
 
 @app.route('/load_random')
 def load_random():
@@ -107,7 +120,7 @@ def load_random():
         findrandom.iloc[i,replace_vector[i]] = " "
 
     modetitle = " (random test)"
-    return render_template('home.html', name = 'science' + modetitle, dataframe=findrandom)
+    return render_template('home.html', name = render_name(name) + modetitle, dataframe=findrandom)
 
 @app.route('/about')
 def about():
@@ -117,3 +130,10 @@ def about():
 if __name__ == '__main__':
     app.run(debug=True)
 
+"""
+            <div>
+                <p class="subtitle">Vocabulary test generator</p>
+            </div>
+              padding: 2px 2px 0px 2px
+
+"""
