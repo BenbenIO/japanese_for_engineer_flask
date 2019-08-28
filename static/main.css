@@ -75,3 +75,18 @@ tr, th, td { text-align: center; }
   background-color: #fafafa;
   margin: 1% 
 }
+
+.btn-print{
+  background-color: #ecb337;
+  color:rgb(66, 66, 66);
+  font-weight: bold;
+  border-color: #f7cf63;
+  margin: 1% 
+}
+
+.btn-print:hover{
+  background-color: #f1c76d;
+  color:rgb(66, 66, 66);
+  font-weight: bold;
+  border-color: #f7cf63;
+}
