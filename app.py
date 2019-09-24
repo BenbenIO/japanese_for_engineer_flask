@@ -18,7 +18,7 @@ def load_vocabulary(wanted_vocabulary='Machine_Learning'):
     """
     global vocabulary, vocabulary_temp, name, name_full
     name = wanted_vocabulary
-    name_full = ""
+    name_full = name
 
     vocabulary = pd.read_excel(app.root_path + "/xls_files/" + name +'.xls', index=False)
     vocabulary.index += 1 
