@@ -14,6 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-header .navbar-nav .nav-link {
+  text-align: center;
   color: #cbd5db;
   margin: auto;
   height: 10%;
@@ -25,6 +26,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
+}
+
+.subtitle{
+  color: #fafafa;
+  font-style: italic;
+  font-weight: bold;
+  font-weight: 500;
+  margin-bottom: 0px;
+  margin-top: 1px;
+  padding: 2px 0px 2px 2px 
 }
 
 .content-section {
@@ -63,4 +74,19 @@ tr, th, td { text-align: center; }
 .dropdown-item{
   background-color: #fafafa;
   margin: 1% 
+}
+
+.btn-print{
+  background-color: #ecb337;
+  color:rgb(66, 66, 66);
+  font-weight: bold;
+  border-color: #f7cf63;
+  margin: 1% 
+}
+
+.btn-print:hover{
+  background-color: #f1c76d;
+  color:rgb(66, 66, 66);
+  font-weight: bold;
+  border-color: #f7cf63;
 }
