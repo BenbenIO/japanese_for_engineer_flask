@@ -76,6 +76,13 @@ def select_General():
     load_vocabulary("General")
     return render_template('home.html', name = render_name(name), dataframe=vocabulary)
 
+@app.route('/select_Drone')
+def select_Drone():
+    # Selec the General dataframe
+    global vocabulary, name
+    load_vocabulary("Drone")
+    return render_template('home.html', name = render_name(name), dataframe=vocabulary)
+
 ## Test mode callback
 @app.route('/load_answer')
 def load_answer():
